@@ -1,0 +1,6 @@
+keras
+pyenchant
+xgboost
+regex
+nltk
+scikit-learn
