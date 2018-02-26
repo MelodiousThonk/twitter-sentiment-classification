@@ -19,7 +19,7 @@ In these 10 models, we mainly used LSTM, Convolutions, MaxPooling layers. We mix
 You can see the details of the models on Final/models.
 Here are the results for the 10 models and the final result :
 
-| Models       | Training Accuracy           | Validation Acc |
+| Models       | Training Accuracy           | Validation Accuracy |
 | -------------|:------------------:|:-------------------:|
 | Model 1      | 0.90197            | 0.87174             |
 | Model 2      | 0.90258            | 0.87027             |
