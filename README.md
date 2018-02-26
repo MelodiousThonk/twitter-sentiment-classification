@@ -68,7 +68,7 @@ However, if you want to run your personalized model or run the models from the s
 - run one model at a time by commenting the 9 others in the file `models.py` and dump the features.
 - For models which uses the first set of features (1-gram + pretrained GloVe), please download the twitter version of GloVe in : `http://nlp.stanford.edu/projects/glove/` and put the dezipped file in folder named `embeddings` contained in the Final folder.
 
-After dumping all the features, load them and run XGBoost on the probability matrix (by means of `run.py` ).
+After dumping all the features, load them and run XGBoost on the probability matrix.
 
 ## Authors
 
