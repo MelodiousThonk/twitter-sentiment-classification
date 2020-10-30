@@ -37,14 +37,6 @@ dico3.close()
 d = enchant.Dict('en_US')
 
 def remove_repetitions(tweet):
-"""
-Functions that remove noisy character repetition like for instance :
-llloooooooovvvvvve ====> love
-This function reduce the number of character repetition to 2 and checks if the word belong the english
-vocabulary by use of pyEnchant and reduce the number of character repetition to 1 otherwise
-Arguments: tweet (the tweet)
-
-"""
     tweet=tweet.split()
     for i in range(len(tweet)):
         tweet[i]=''.join(''.join(s)[:2] for _, s in itertools.groupby(tweet[i])).replace('#', '')
@@ -55,12 +47,6 @@ Arguments: tweet (the tweet)
     return tweet
 
 def correct_spell(tweet):
-    """
-    Function that uses the three dictionaries that we described above and replace noisy words
-
-    Arguments: tweet (the tweet)
-
-    """
     tweet = tweet.split()
     for i in range(len(tweet)):
         if tweet[i] in dico.keys():
@@ -69,13 +55,6 @@ def correct_spell(tweet):
     return tweet
 
 def clean(tweet):
-    """
-    Function that cleans the tweet using the functions above and some regular expressions
-    to reduce the noise
-
-    Arguments: tweet (the tweet)
-
-    """
     #Separates the contractions and the punctuation
     tweet = re.sub(r"\'s", " \'s", tweet)
     tweet = re.sub(r"\'ve", " \'ve", tweet)
