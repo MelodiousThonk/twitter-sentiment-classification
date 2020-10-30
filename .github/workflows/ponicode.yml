@@ -22,8 +22,8 @@ jobs:
     - uses: ponicode/docstrings-action@master
       with:
         repo_path: ./
-        auth_token: e8052b31-7e9b-4fd1-ad80-9780209b3e79
-        all_repo: True
+        auth_token: ${{ secrets.PONICODE_TOKEN }}
+        all_repo: true
       # Creates pull request with all changes in file
     - name: Create Pull Request 
       uses: peter-evans/create-pull-request@v2 
