@@ -6,10 +6,18 @@ import numpy as np
 import _pickle as cPickle
 
 def create_ngram_set(input_list, ngram_value=2):
+    """
+    Create a list of n - grams from a list.
+
+    """
     return set(zip(*[input_list[i:] for i in range(ngram_value)]))
 
 
 def add_ngram(sequences, token_indice, ngram_range=2):
+    """
+    Add n - grams to a list of sequences.
+
+    """
     new_sequences = []
     for input_list in sequences:
         new_list = input_list[:]
@@ -25,6 +33,10 @@ def add_ngram(sequences, token_indice, ngram_range=2):
 
 
 def train_test_features(full=True, n_gram=False, pretrained=True, nb_words=None):
+    """
+    Train a train features.
+
+    """
     np.random.seed(0)
 
     if full:
@@ -160,6 +172,10 @@ def train_test_features(full=True, n_gram=False, pretrained=True, nb_words=None)
         return train_sequences, labels, test_sequences, max_features
 
 def dumpFeatures(full, n_gram, pretrained, nb_words, namefile):
+    """
+    Parameters ---------- full : np.
+
+    """
     if pretrained:
         train_sequences, labels, test_sequences, max_features, embedding_matrix = train_test_features(full, n_gram, pretrained, nb_words)
         cPickle.dump([train_sequences, labels, test_sequences, max_features, embedding_matrix],open(namefile, 'wb'))

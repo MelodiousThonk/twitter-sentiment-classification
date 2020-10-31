@@ -37,6 +37,10 @@ dico3.close()
 d = enchant.Dict('en_US')
 
 def remove_repetitions(tweet):
+    """
+    Remove the tweet from tweet.
+
+    """
     tweet=tweet.split()
     for i in range(len(tweet)):
         tweet[i]=''.join(''.join(s)[:2] for _, s in itertools.groupby(tweet[i])).replace('#', '')
@@ -47,6 +51,10 @@ def remove_repetitions(tweet):
     return tweet
 
 def correct_spell(tweet):
+    """
+    Corrects a tweet.
+
+    """
     tweet = tweet.split()
     for i in range(len(tweet)):
         if tweet[i] in dico.keys():
@@ -55,6 +63,10 @@ def correct_spell(tweet):
     return tweet
 
 def clean(tweet):
+    """
+    Clean a tweet from a tweet.
+
+    """
     #Separates the contractions and the punctuation
     tweet = re.sub(r"\'s", " \'s", tweet)
     tweet = re.sub(r"\'ve", " \'ve", tweet)
